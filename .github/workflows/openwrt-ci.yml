@@ -51,9 +51,7 @@ jobs:
           ./scripts/feeds install -a
 
       - name: Generate configuration file
-        run: |
-          rm -rf .config
-          make menuconfig
+        run: make menuconfig
 
       - name: Download packages
         run: make download -j16

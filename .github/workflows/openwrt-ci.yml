@@ -51,7 +51,7 @@ jobs:
           ./scripts/feeds install -a
 
       - name: Generate configuration file
-        run: make defconfig
+        run: sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
       - name: Download packages
         run: make download -j16
